@@ -20,6 +20,7 @@ pipeline {
             steps{
                 script{
                    sh 'cd /var/lib/jenkins/workspace/v_profile/vprofile-project'
+                    sh 'cp -r target /var/lib/jenkins/workspace/v_profile/vprofile-project/dockerfiles/app'
                     
                 }
             }
