@@ -16,6 +16,14 @@ pipeline {
             sh 'mvn clean package'
             }
         }
+        stage('Build docker image'){
+            steps{
+                script{
+                    sh 'cp -r target /dockerfiles/app
+                    
+                }
+            }
+        }
  } 
 }    
     
