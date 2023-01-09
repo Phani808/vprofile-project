@@ -19,7 +19,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'cp -r target /dockerfiles/app
+                    sh 'cp -r target /dockerfiles/app'
                     
                 }
             }
