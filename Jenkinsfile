@@ -7,7 +7,7 @@ pipeline {
     stages {
             stage('Repo cloning') {
                   steps {
-        git 'https://github.com/Phani808/vprofile-project.git'
+        checkout([$class: 'GitSCM', branches: [[name: '*/ci-jenkins']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Phani808/vprofile-project.git']]])
    
       }
     } 
