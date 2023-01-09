@@ -19,7 +19,10 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'cp -r target /dockerfiles/app'
+                    sh 'cd stage('Build docker image'){
+            steps{
+                script{
+                    sh 'cd /var/lib/jenkins/workspace/v_profile/vprofile-project'
                     
                 }
             }
