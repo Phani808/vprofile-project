@@ -21,6 +21,8 @@ pipeline {
                 script{
                    sh 'cd /var/lib/jenkins/workspace/v_profile/vprofile-project'
                     sh 'cp -r target /var/lib/jenkins/workspace/v_profile/vprofile-project/dockerfiles/app'
+                    sh 'cd /var/lib/jenkins/workspace/v_profile/vprofile-project/dockerfiles/app'
+                    sh 'docker build -t phani997/vprofileapp .'
                     
                 }
             }
