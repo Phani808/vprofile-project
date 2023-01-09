@@ -7,7 +7,7 @@ pipeline {
     stages {
             stage('Repo cloning') {
                   steps {
-                  git 'https://github.com/Phani808/projectk.git'
+                  git 'https://github.com/Phani808/vprofile-project.git'
             } 
             
         }
