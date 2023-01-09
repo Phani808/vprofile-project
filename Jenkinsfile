@@ -10,7 +10,12 @@ pipeline {
         sh 'git clone https://github.com/Phani808/vprofile-project.git'
    
       }
-    }  
+    } 
+        stage('maven build') {
+        steps{    
+            sh 'mvn clean package'
+            }
+        }
  } 
 }    
     
