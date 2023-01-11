@@ -102,13 +102,14 @@ pipeline {
     stage('Build docker image and push'){
             steps{
                 script{
+			withCredentials([string(credentialsId: 'nexus-pass', variable: 'nexus')]) {
 			
 				sh 'docker build -t 34.125.18.214:8083/vprofile .'
-				sh 'docker login -u admin -p m@97997 34.125.18.214:8083'
+				sh 'docker login -u admin -p $nexus 34.125.18.214:8083'
 				sh 'docker push 34.125.18.214:8083/vprofile'
    
 
-                    
+			}
                 }
             }
         }
