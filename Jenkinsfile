@@ -9,6 +9,13 @@ pipeline {
       checkout([$class: 'GitSCM', branches: [[name: '*/vp-rem']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Phani808/vprofile-project.git']]])
     }
     }
+    stage('Sonar Quality status'){
+    steps{
+      withSonarQubeEnv(credentialsId: 'sonar-token') {
+    sh 'mvn clean package sonar:sonar'
+      }
+    } 
+}
      stage('maven build') {
         steps{    
             sh 'mvn clean package'
