@@ -11,10 +11,10 @@ pipeline {
     }
     stage('Sonar Quality status'){
     steps{
-      withSonarQubeEnv(credentialsId: 'sonar-token') {
+   
         withSonarQubeEnv('mysonar') {
     sh 'mvn clean package sonar:sonar'
-      }
+      
       }
     } 
 }
