@@ -18,6 +18,12 @@ pipeline {
       }
     } 
 }
+    stage('Quality Gate Status'){
+      steps{
+        withSonarQubeEnv(credentialsId: 'sonar-token') {
+        }
+      }   
+}
      stage('maven build') {
         steps{    
             sh 'mvn clean package'
