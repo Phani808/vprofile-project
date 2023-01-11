@@ -18,17 +18,19 @@ pipeline {
       }
     } 
 }
-    stage('Quality Gate Status'){
-      steps{
-        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
-        
-      }   
-}
+
+
      stage('maven build') {
         steps{    
             sh 'mvn clean package'
             }
         }
+    post {
+                success {
+                    echo 'Now Archiving...'
+                    archiveArtifacts artifacts: '**/target/*.war'
+                }
+    }
     stage('Build docker image'){
             steps{
                 script{
